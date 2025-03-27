@@ -2,7 +2,7 @@ public class Point {
 
     protected int xCoord, yCoord;
 
-    public Point(){}
+    public Point(){} // boş constructor ile nesne yaratamam eğer yazmazsam
 
     public Point(int x , int y){
         this.xCoord = x;
@@ -12,5 +12,13 @@ public class Point {
     public Point(int xy){
         this.xCoord = xy;
         this.yCoord = xy;
+    }
+
+    @Override
+    public String toString() {
+        return "Point{" +
+                "xCoord=" + xCoord +
+                ", yCoord=" + yCoord +
+                '}';
     }
 }

@@ -1,26 +1,17 @@
-public class Rectangle {
+public class Rectangle extends Shape{ // shape is the parent/super class (rectangle subclass)
 
-    private Point topLeft;
     private int sideA , sideB;
 
-    public Rectangle(Point topLeft, int sideA, int sideB) {
-        this.topLeft = topLeft;
+    public static int counter = 0;
+    public int counterForObject = 0;
+    public static String className = "Rectangle";
+
+    public Rectangle(Point location, int sideA, int sideB){
+        super(location);
         setSideA(sideA);
         setSideB(sideB);
-    }
-
-    public Rectangle(Point topLeft, int sideA) {
-        this.topLeft = topLeft;
-        setSideA(sideA);
-        setSideB(sideA);
-    }
-
-    public Point getTopLeft() {
-        return topLeft;
-    }
-
-    public void setTopLeft(Point topLeft) {
-        this.topLeft = topLeft;
+        counter++;
+        counterForObject++;
     }
 
     public int getSideA() {
@@ -28,9 +19,8 @@ public class Rectangle {
     }
 
     public void setSideA(int sideA) {
-        if (sideA < 0){
-            this.sideA = 0;
-            System.out.println("Side A can't be negative!!");
+        if (sideA <= 0){
+            throw new IllegalArgumentException("Side A can't be negative!!");
         }
         else {
             this.sideA = sideA;
@@ -49,10 +39,24 @@ public class Rectangle {
             this.sideB = sideB;
         }
     }
-    public int perimeter(){
-        return 2 * (sideA + sideB);
+
+    @Override
+    public double perimeter() {
+        return 2 * (sideA+sideB);
     }
-    public int area(){
+
+    @Override
+    public double area() {
         return sideA * sideB;
+    }
+
+    @Override
+    public String toString() {
+        return "Rectangle{" +
+                "location=" + this.getLocation() +
+                ", sideA=" + this.sideA +
+                ", sideB=" + this.sideB +
+                ", counterForObject=" + counterForObject +
+                '}';
     }
 }

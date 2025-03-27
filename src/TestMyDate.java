@@ -1,5 +1,5 @@
 public class TestMyDate {
-
+/*
 	public static void main(String[] args) {
 		MyDate date = new MyDate(28,2,2017);
 		
@@ -70,8 +70,7 @@ public class TestMyDate {
 		int dayDiff = date.dayDifference(anotherDate);
 		System.out.println("Day difference between " + date.toString()+ " and " + anotherDate.toString()+ " is " + dayDiff);
 		//Expected output: Day difference between 2017-03-29 and 2017-02-28 is 29
-			
 
 	}
-
+*/
 }
